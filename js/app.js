@@ -18,3 +18,18 @@ class Tomagotchi {
     }
   }
 }
+
+const tomagotchiFactory = {
+  tomagotchis: [],
+  breedTomagotchi(name) {
+    const newTomagotchi = new Tomagotchi(name);
+    this.tomagotchis.push(newTomagotchi);
+    return newTomagotchi;
+  },
+  findTomagotchi(index) {
+    console.log(this.tomagotchis[index]);
+  }
+}
+
+tomagotchiFactory.breedTomagotchi("Curlin");
+console.log(tomagotchiFactory.findTomagotchi(0));
