@@ -33,3 +33,4 @@ const tomagotchiFactory = {
 
 tomagotchiFactory.breedTomagotchi("Curlin");
 console.log(tomagotchiFactory.findTomagotchi(0));
+$('body').append(tomagotchiFactory.tomagotchis[0])

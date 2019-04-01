@@ -1,0 +1,56 @@
+.ff {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  min-width: 200%;
+  min-height: 200%;
+}
+
+.ff img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}
+
+.text-block {
+  color: rgb(28, 195, 240);
+  padding-left: 35px;
+  padding-bottom: 25px;
+  padding-right: 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  max-width: 425px;
+}
+
+h1 {
+  font-family: 'Peralta', cursive;
+  font-size: 65px;
+  text-shadow: 15px 15px 15px black;
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 28px;
+  font-style: italic;
+  text-shadow: 3px 3px 3px black;
+}
+
+h3 {
+  font-family: 'Peralta', cursive;
+  font-size: 20px;
+  text-shadow: 2px 2px 2px black;
+}
+
+aside {
+  float: right;
+}
