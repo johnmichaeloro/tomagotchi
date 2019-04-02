@@ -21,6 +21,38 @@ const tomagotchiFactory = {
 }
 
 
+const moveMarmot = () => {
+  for (let i = 0; i < 50; i++) {
+    if(i <= 10) {
+      $('#marmotGIF').animate({
+        marginTop: "+=20px",
+        marginLeft: "+=10px",
+      }, 1000);
+    } else if(i > 10 && i <= 20) {
+      $('#marmotGIF').animate({
+        marginTop: "+=10px",
+        marginLeft: "+=40px",
+      }, 1000);
+    } else if(i > 20 && i <= 30) {
+      $('#marmotGIF').animate({
+        marginTop: "-=15px",
+        marginLeft: "-=50px",
+      }, 1000);
+    } else if(i > 30 && i <= 40) {
+      $('#marmotGIF').animate({
+        marginBottom: "-=15px",
+        marginRight: "-=30px",
+      }, 1000);
+    } else if(i > 40 && i < 50) {
+      $('#marmotGIF').animate({
+        marginTop: "-=5px",
+        marginLeft: "-=25px",
+      }, 1000);
+    }
+    }
+  }
+
+//Add functionality so that a name cannot be entered during play
 
 $('#name-button').on('click', (e) => {
   if(tomagotchiFactory.tomagotchis = []) {
@@ -28,6 +60,7 @@ $('#name-button').on('click', (e) => {
   tomagotchiFactory.tomagotchis[0].name = $('.name-box').val();
   $('.name-box').val('');
   $('#name-metric').text('Name: ' + tomagotchiFactory.tomagotchis[0].name);
+  moveMarmot();
   const isDead = () => {
     if(tomagotchiFactory.tomagotchis[0].hunger >= 10) {
       stopHunger();
@@ -158,11 +191,8 @@ $('#sleep-button').on('click', (e) => {
   $('#sleepiness-metric').text('Sleepiness: ' + tomagotchiFactory.tomagotchis[0].sleepiness);
 })
 
-//At a certain time, it dies.
-//Finally, animate the tomagotchi and finish styling the page.
-//I will probably have to use clearinterval when the marmot dies
-//I need the Marmot to die. How do I do this?
-//For the marmot to die, the game needs to stop when a metric hits 10.
-//I will have to remove the tomagotchi instantiation perhaps .remove()
-//Can I put the death parameters in the object? If so, how?
-//If a metric equals 10, the intervals are cleared, the tomagotchi is removed, the user is notified that their tomagotchi has died
+//Create div that spans browser window (100% on both height and width)
+//Make position absolute
+//Set marmot gif in new div
+//Finish styling page
+//Animate marmot: movement, morphing, and death

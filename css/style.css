@@ -17,6 +17,18 @@
   min-height: 50%;
 }
 
+.marmot {
+  position: absolute;
+  height: 90%;
+  width: 90%;
+}
+
+#marmotGIF {
+  position: fixed;
+  top: 600px;
+  left: 35px;
+}
+
 .text-block {
   color: rgb(28, 195, 240);
   padding-left: 35px;
@@ -29,18 +41,45 @@
   text-align: left;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  max-width: 425px;
+  max-width: 400px;
+  min-width: 400px;
+}
+
+input {
+  height: 35px;
+  width: 200px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+button {
+  color: rgb(239, 243, 246);
+  text-shadow: 2px 2px 2px black;
+  background-image: linear-gradient(rgb(28, 195, 240), rgb(15, 131, 198));
+  height: 70px;
+  font-family: 'Peralta', cursive;
+  font-size: 15px;
+  border-radius: 3px;
+  border-color: black;
+}
+
+#name-button {
+  height: 38px;
 }
 
 h1 {
   font-family: 'Peralta', cursive;
   font-size: 65px;
   text-shadow: 15px 15px 15px black;
+  margin-bottom: 15px;
 }
 
 h2 {
   font-family: 'Raleway', sans-serif;
-  font-size: 28px;
+  font-size: 25px;
   font-style: italic;
   text-shadow: 3px 3px 3px black;
 }
@@ -56,13 +95,16 @@ h3 {
   font-size: 20px;
   text-shadow: 2px 2px 2px black;
   border-collapse: separate;
-  border-spacing: 50px 0;
+  border-spacing: 40px 0;
+  margin-bottom: 15px;
 }
 
 td {
   padding: 10px 0;
 }
 
-aside {
-  float: right;
+.actions {
+  padding-top: 10px;
+  border-spacing: 5px;
+  margin-left: none;
 }
