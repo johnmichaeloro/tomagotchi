@@ -65,7 +65,7 @@ $('#name-button').on('click', (e) => {
       $('.actions').css({'visibility': 'collapse'});
       $('#name-table').css({'visibility':'visible'});
       $('#marmotGIF').stop();
-      $('#marmotGIF').css({'marginLeft':'5%'});
+      $('#marmotGIF').css({'marginLeft':'0%'});
       $('#marmotGIF').css({'transform':'scaleX(1)'});
     } else if(tomagotchiFactory.tomagotchis[0].boredom >= 10) {
       stopHunger();
@@ -84,7 +84,7 @@ $('#name-button').on('click', (e) => {
       $('.actions').css({'visibility': 'collapse'});
       $('#name-table').css({'visibility':'visible'});
       $('#marmotGIF').stop();
-      $('#marmotGIF').css({'marginLeft':'5%'});
+      $('#marmotGIF').css({'marginLeft':'0%'});
       $('#marmotGIF').css({'transform':'scaleX(1)'});
     } else if(tomagotchiFactory.tomagotchis[0].sleepiness >= 10) {
       stopHunger();
@@ -103,7 +103,7 @@ $('#name-button').on('click', (e) => {
       $('.actions').css({'visibility': 'collapse'});
       $('#name-table').css({'visibility':'visible'});
       $('#marmotGIF').stop();
-      $('#marmotGIF').css({'marginLeft':'5%'});
+      $('#marmotGIF').css({'marginLeft':'0%'});
       $('#marmotGIF').css({'transform':'scaleX(1)'});
     } else if(tomagotchiFactory.tomagotchis[0].age >= 10) {
       stopHunger();
@@ -122,7 +122,7 @@ $('#name-button').on('click', (e) => {
       $('.actions').css({'visibility': 'collapse'});
       $('#name-table').css({'visibility':'visible'});
       $('#marmotGIF').stop();
-      $('#marmotGIF').css({'marginLeft':'5%'});
+      $('#marmotGIF').css({'marginLeft':'0%'});
       $('#marmotGIF').css({'transform':'scaleX(1)'});
     }
   }
