@@ -20,41 +20,29 @@ const tomagotchiFactory = {
   }
 }
 
-
 const moveMarmot = () => {
-  for (let i = 0; i < 40; i++) {
-    if(i <= 10) {
-      $('#marmotGIF').animate({
-        marginLeft: "+=15px",
-      }, 1500);
-    } else if(i > 10 && i <= 20) {
-      $('#marmotGIF').animate({
-        marginLeft: "-=15px",
-      }, 1500);
-    } else if(i > 20 && i <= 30) {
-      $('#marmotGIF').animate({
-        marginLeft: "+=15px",
-      }, 1500);
-  } else if(i > 30 && i <= 40) {
-    $('#marmotGIF').animate({
-      marginLeft: "-=15px",
-    }, 1500);
-  }
-  }
+  $('#marmotGIF').css({'transform':'scaleX(1)'});
+  $('#marmotGIF').animate({
+    marginLeft: "+=70%",
+  }, 15000, moveAgain);
 }
 
-tomagotchiFactory.tomagotchis = [Tomagotchi]
+const moveAgain = () => {
+  $('#marmotGIF').css({'transform':'scaleX(-1)'});
+  $('#marmotGIF').animate({
+    marginLeft: "-=70%",
+  }, 15000, moveMarmot);
+}
 
 $('#name-button').on('click', (e) => {
   if(tomagotchiFactory.tomagotchis = []) {
   tomagotchiFactory.breedTomagotchi();
   tomagotchiFactory.tomagotchis[0].name = $('.name-box').val();
   $('.name-box').val('');
-  $('.name-box').css({'visibility': 'hidden'});
-  $('#name-button').css({'visibility': 'hidden'});
+  $('#name-table').css({'visibility':'collapse'});
   $('.actions').css({'visibility': 'visible'});
   $('#name-metric').text('Name: ' + tomagotchiFactory.tomagotchis[0].name);
-  $('#marmotGIF').css({"visibility":"visible"});
+  $('#marmotGIF').css({'visibility':'visible'});
   moveMarmot();
   const isDead = () => {
     if(tomagotchiFactory.tomagotchis[0].age >= 8) {
@@ -74,9 +62,8 @@ $('#name-button').on('click', (e) => {
       $('#hunger-metric').text("Hunger: 0");
       $('#sleepiness-metric').text("Sleepiness: 0");
       $('#boredom-metric').text("Boredom: 0");
-      $('.actions').css({'visibility': 'hidden'});
-      $('.name-box').css({'visibility': 'visible'});
-      $('#name-button').css({'visibility': 'visible'});
+      $('.actions').css({'visibility': 'collapse'});
+      $('#name-table').css({'visibility':'visible'});
     } else if(tomagotchiFactory.tomagotchis[0].boredom >= 10) {
       stopHunger();
       stopBoredom();
@@ -91,9 +78,8 @@ $('#name-button').on('click', (e) => {
       $('#hunger-metric').text("Hunger: 0");
       $('#sleepiness-metric').text("Sleepiness: 0");
       $('#boredom-metric').text("Boredom: 0");
-      $('.actions').css({'visibility': 'hidden'});
-      $('.name-box').css({'visibility': 'visible'});
-      $('#name-button').css({'visibility': 'visible'});
+      $('.actions').css({'visibility': 'collapse'});
+      $('#name-table').css({'visibility':'visible'});
     } else if(tomagotchiFactory.tomagotchis[0].sleepiness >= 10) {
       stopHunger();
       stopBoredom();
@@ -108,9 +94,8 @@ $('#name-button').on('click', (e) => {
       $('#hunger-metric').text("Hunger: 0");
       $('#sleepiness-metric').text("Sleepiness: 0");
       $('#boredom-metric').text("Boredom: 0");
-      $('.actions').css({'visibility': 'hidden'});
-      $('.name-box').css({'visibility': 'visible'});
-      $('#name-button').css({'visibility': 'visible'});
+      $('.actions').css({'visibility': 'collapse'});
+      $('#name-table').css({'visibility':'visible'});
     } else if(tomagotchiFactory.tomagotchis[0].age >= 10) {
       stopHunger();
       stopBoredom();
@@ -125,9 +110,8 @@ $('#name-button').on('click', (e) => {
       $('#hunger-metric').text("Hunger: 0");
       $('#sleepiness-metric').text("Sleepiness: 0");
       $('#boredom-metric').text("Boredom: 0");
-      $('.actions').css({'visibility': 'hidden'});
-      $('.name-box').css({'visibility': 'visible'});
-      $('#name-button').css({'visibility': 'visible'});
+      $('.actions').css({'visibility': 'collapse'});
+      $('#name-table').css({'visibility':'visible'});
     }
   }
 

@@ -33,8 +33,8 @@
 
 #marmotGIF {
   position: fixed;
-  top: 635px;
-  left: 35px;
+  top: 82%;
+  left: 5%;
   visibility: hidden;
 }
 
@@ -108,12 +108,12 @@ td {
 }
 
 .actions {
-  padding-top: 10px;
+  padding-top: 0px;
   border-spacing: 5px;
   margin-left: none;
-  visibility: hidden;
+  visibility: collapse;
 }
 
-.name-box #name-button {
+#name-table {
   visibility: visible;
 }
