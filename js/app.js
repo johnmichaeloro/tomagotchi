@@ -50,6 +50,7 @@ $('#name-button').on('click', (e) => {
   tomagotchiFactory.tomagotchis[0].name = $('.name-box').val();
   $('.name-box').val('');
   $('#name-metric').text('Name: ' + tomagotchiFactory.tomagotchis[0].name);
+  $('#marmotGIF').attr('src', 'css/images/marmot.gif');
   $('#marmotGIF').css({"visibility":"visible"});
   moveMarmot();
   const isDead = () => {
