@@ -23,14 +23,14 @@ const tomagotchiFactory = {
 const moveMarmot = () => {
   $('#marmotGIF').css({'transform':'scaleX(1)'});
   $('#marmotGIF').animate({
-    marginLeft: "+=800px",
+    marginLeft: "+=80%",
   }, 15000, moveAgain);
 }
 
 const moveAgain = () => {
   $('#marmotGIF').css({'transform':'scaleX(-1)'});
   $('#marmotGIF').animate({
-    marginLeft: "-=800px",
+    marginLeft: "-=80%",
   }, 15000, moveMarmot);
 }
 
