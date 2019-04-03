@@ -23,16 +23,18 @@ const tomagotchiFactory = {
 const moveMarmot = () => {
   $('#marmotGIF').css({'transform':'scaleX(1)'});
   $('#marmotGIF').animate({
-    marginLeft: "+=70%",
+    marginLeft: "+=800px",
   }, 15000, moveAgain);
 }
 
 const moveAgain = () => {
   $('#marmotGIF').css({'transform':'scaleX(-1)'});
   $('#marmotGIF').animate({
-    marginLeft: "-=70%",
+    marginLeft: "-=800px",
   }, 15000, moveMarmot);
 }
+
+moveMarmot();
 
 $('#name-button').on('click', (e) => {
   if(tomagotchiFactory.tomagotchis = []) {
@@ -43,7 +45,6 @@ $('#name-button').on('click', (e) => {
   $('.actions').css({'visibility': 'visible'});
   $('#name-metric').text('Name: ' + tomagotchiFactory.tomagotchis[0].name);
   $('#marmotGIF').css({'visibility':'visible'});
-  moveMarmot();
   const isDead = () => {
     if(tomagotchiFactory.tomagotchis[0].age >= 8) {
       $('#marmotGIF').attr('src', 'css/images/marmotGray.gif');
