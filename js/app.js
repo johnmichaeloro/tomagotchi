@@ -43,14 +43,17 @@ const moveMarmot = () => {
   }
 }
 
+tomagotchiFactory.tomagotchis = [Tomagotchi]
 
 $('#name-button').on('click', (e) => {
   if(tomagotchiFactory.tomagotchis = []) {
   tomagotchiFactory.breedTomagotchi();
   tomagotchiFactory.tomagotchis[0].name = $('.name-box').val();
   $('.name-box').val('');
+  $('.name-box').css({'visibility': 'hidden'});
+  $('#name-button').css({'visibility': 'hidden'});
+  $('.actions').css({'visibility': 'visible'});
   $('#name-metric').text('Name: ' + tomagotchiFactory.tomagotchis[0].name);
-  $('#marmotGIF').attr('src', 'css/images/marmot.gif');
   $('#marmotGIF').css({"visibility":"visible"});
   moveMarmot();
   const isDead = () => {
@@ -64,12 +67,16 @@ $('#name-button').on('click', (e) => {
       stopAge();
       alert(tomagotchiFactory.tomagotchis[0].name + " has died of hunger.");
       $('#marmotGIF').css({"visibility":"hidden"});
+      $('#marmotGIF').attr('src', 'css/images/marmot.gif');
       delete tomagotchiFactory.tomagotchis[0];
       $('#name-metric').text("Name: ")
       $('#age-metric').text("Age: 0");
       $('#hunger-metric').text("Hunger: 0");
       $('#sleepiness-metric').text("Sleepiness: 0");
       $('#boredom-metric').text("Boredom: 0");
+      $('.actions').css({'visibility': 'hidden'});
+      $('.name-box').css({'visibility': 'visible'});
+      $('#name-button').css({'visibility': 'visible'});
     } else if(tomagotchiFactory.tomagotchis[0].boredom >= 10) {
       stopHunger();
       stopBoredom();
@@ -77,12 +84,16 @@ $('#name-button').on('click', (e) => {
       stopAge();
       alert(tomagotchiFactory.tomagotchis[0].name + " has died of boredom.");
       $('#marmotGIF').css({"visibility":"hidden"});
+      $('#marmotGIF').attr('src', 'css/images/marmot.gif');
       delete tomagotchiFactory.tomagotchis[0];
       $('#name-metric').text("Name: ")
       $('#age-metric').text("Age: 0");
       $('#hunger-metric').text("Hunger: 0");
       $('#sleepiness-metric').text("Sleepiness: 0");
       $('#boredom-metric').text("Boredom: 0");
+      $('.actions').css({'visibility': 'hidden'});
+      $('.name-box').css({'visibility': 'visible'});
+      $('#name-button').css({'visibility': 'visible'});
     } else if(tomagotchiFactory.tomagotchis[0].sleepiness >= 10) {
       stopHunger();
       stopBoredom();
@@ -90,12 +101,16 @@ $('#name-button').on('click', (e) => {
       stopAge();
       alert(tomagotchiFactory.tomagotchis[0].name + " has died of sleepiness.");
       $('#marmotGIF').css({"visibility":"hidden"});
+      $('#marmotGIF').attr('src', 'css/images/marmot.gif');
       delete tomagotchiFactory.tomagotchis[0];
       $('#name-metric').text("Name: ")
       $('#age-metric').text("Age: 0");
       $('#hunger-metric').text("Hunger: 0");
       $('#sleepiness-metric').text("Sleepiness: 0");
       $('#boredom-metric').text("Boredom: 0");
+      $('.actions').css({'visibility': 'hidden'});
+      $('.name-box').css({'visibility': 'visible'});
+      $('#name-button').css({'visibility': 'visible'});
     } else if(tomagotchiFactory.tomagotchis[0].age >= 10) {
       stopHunger();
       stopBoredom();
@@ -103,12 +118,16 @@ $('#name-button').on('click', (e) => {
       stopAge();
       alert(tomagotchiFactory.tomagotchis[0].name + " has died of old age.");
       $('#marmotGIF').css({"visibility":"hidden"});
+      $('#marmotGIF').attr('src', 'css/images/marmot.gif');
       delete tomagotchiFactory.tomagotchis[0];
       $('#name-metric').text("Name: ")
       $('#age-metric').text("Age: 0");
       $('#hunger-metric').text("Hunger: 0");
       $('#sleepiness-metric').text("Sleepiness: 0");
       $('#boredom-metric').text("Boredom: 0");
+      $('.actions').css({'visibility': 'hidden'});
+      $('.name-box').css({'visibility': 'visible'});
+      $('#name-button').css({'visibility': 'visible'});
     }
   }
 
@@ -192,8 +211,5 @@ $('#sleep-button').on('click', (e) => {
   $('#sleepiness-metric').text('Sleepiness: ' + tomagotchiFactory.tomagotchis[0].sleepiness);
 })
 
-//Create div that spans browser window (100% on both height and width)
-//Make position absolute
-//Set marmot gif in new div
-//Finish styling page
-//Animate marmot: movement, morphing, and death
+//To stop the bugs, I need to stop input from the name button during play. I also need to prevent input from the action buttons before and after play. Then I need to check the gray Marmot dimensions to make sure it matches live marmot.
+//I could hide the input form and button during play. I could hide the action buttons before and after play.

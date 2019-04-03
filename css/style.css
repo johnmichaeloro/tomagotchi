@@ -33,7 +33,7 @@
 
 #marmotGIF {
   position: fixed;
-  top: 625px;
+  top: 635px;
   left: 35px;
   visibility: hidden;
 }
@@ -111,4 +111,9 @@ td {
   padding-top: 10px;
   border-spacing: 5px;
   margin-left: none;
+  visibility: hidden;
+}
+
+.name-box #name-button {
+  visibility: visible;
 }
