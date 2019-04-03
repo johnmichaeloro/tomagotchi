@@ -43,8 +43,6 @@ const moveMarmot = () => {
   }
 }
 
-//I need to use show and hide properties for the start of the game and death
-//Add functionality so that a name cannot be entered during play
 
 $('#name-button').on('click', (e) => {
   if(tomagotchiFactory.tomagotchis = []) {
@@ -55,6 +53,9 @@ $('#name-button').on('click', (e) => {
   $('#marmotGIF').css({"visibility":"visible"});
   moveMarmot();
   const isDead = () => {
+    if(tomagotchiFactory.tomagotchis[0].age >= 8) {
+      $('#marmotGIF').attr('src', 'css/images/marmotGray.gif');
+    }
     if(tomagotchiFactory.tomagotchis[0].hunger >= 10) {
       stopHunger();
       stopBoredom();
