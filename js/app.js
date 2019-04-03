@@ -22,36 +22,28 @@ const tomagotchiFactory = {
 
 
 const moveMarmot = () => {
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 40; i++) {
     if(i <= 10) {
       $('#marmotGIF').animate({
-        marginTop: "+=20px",
-        marginLeft: "+=10px",
-      }, 1000);
+        marginLeft: "+=15px",
+      }, 1500);
     } else if(i > 10 && i <= 20) {
       $('#marmotGIF').animate({
-        marginTop: "+=10px",
-        marginLeft: "+=40px",
-      }, 1000);
+        marginLeft: "-=15px",
+      }, 1500);
     } else if(i > 20 && i <= 30) {
       $('#marmotGIF').animate({
-        marginTop: "-=15px",
-        marginLeft: "-=50px",
-      }, 1000);
-    } else if(i > 30 && i <= 40) {
-      $('#marmotGIF').animate({
-        marginBottom: "-=15px",
-        marginRight: "-=30px",
-      }, 1000);
-    } else if(i > 40 && i < 50) {
-      $('#marmotGIF').animate({
-        marginTop: "-=5px",
-        marginLeft: "-=25px",
-      }, 1000);
-    }
-    }
+        marginLeft: "+=15px",
+      }, 1500);
+  } else if(i > 30 && i <= 40) {
+    $('#marmotGIF').animate({
+      marginLeft: "-=15px",
+    }, 1500);
   }
+  }
+}
 
+//I need to use show and hide properties for the start of the game and death
 //Add functionality so that a name cannot be entered during play
 
 $('#name-button').on('click', (e) => {
@@ -60,6 +52,7 @@ $('#name-button').on('click', (e) => {
   tomagotchiFactory.tomagotchis[0].name = $('.name-box').val();
   $('.name-box').val('');
   $('#name-metric').text('Name: ' + tomagotchiFactory.tomagotchis[0].name);
+  $('#marmotGIF').css({"visibility":"visible"});
   moveMarmot();
   const isDead = () => {
     if(tomagotchiFactory.tomagotchis[0].hunger >= 10) {
@@ -68,6 +61,7 @@ $('#name-button').on('click', (e) => {
       stopSleepiness();
       stopAge();
       alert(tomagotchiFactory.tomagotchis[0].name + " has died of hunger.");
+      $('#marmotGIF').css({"visibility":"hidden"});
       delete tomagotchiFactory.tomagotchis[0];
       $('#name-metric').text("Name: ")
       $('#age-metric').text("Age: 0");
@@ -80,6 +74,7 @@ $('#name-button').on('click', (e) => {
       stopSleepiness();
       stopAge();
       alert(tomagotchiFactory.tomagotchis[0].name + " has died of boredom.");
+      $('#marmotGIF').css({"visibility":"hidden"});
       delete tomagotchiFactory.tomagotchis[0];
       $('#name-metric').text("Name: ")
       $('#age-metric').text("Age: 0");
@@ -92,6 +87,7 @@ $('#name-button').on('click', (e) => {
       stopSleepiness();
       stopAge();
       alert(tomagotchiFactory.tomagotchis[0].name + " has died of sleepiness.");
+      $('#marmotGIF').css({"visibility":"hidden"});
       delete tomagotchiFactory.tomagotchis[0];
       $('#name-metric').text("Name: ")
       $('#age-metric').text("Age: 0");
@@ -104,6 +100,7 @@ $('#name-button').on('click', (e) => {
       stopSleepiness();
       stopAge();
       alert(tomagotchiFactory.tomagotchis[0].name + " has died of old age.");
+      $('#marmotGIF').css({"visibility":"hidden"});
       delete tomagotchiFactory.tomagotchis[0];
       $('#name-metric').text("Name: ")
       $('#age-metric').text("Age: 0");
@@ -185,6 +182,8 @@ $('#play-button').on('click', (e) => {
 
 $('#sleep-button').on('click', (e) => {
   tomagotchiFactory.tomagotchis[0].sleepiness -= 1;
+  $('.night').css({"background-color":"rgba(0, 0, 0, 0.5)"});
+  setTimeout(function() {$('.night').css({"background-color":"rgba(0, 0, 0, 0)"})}, 2000);
   if(tomagotchiFactory.tomagotchis[0].sleepiness < 0) {
     tomagotchiFactory.tomagotchis[0].sleepiness = 0;
   }

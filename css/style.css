@@ -17,22 +17,32 @@
   min-height: 50%;
 }
 
+.night {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  min-width: 200%;
+  min-height: 200%;
+}
+
 .marmot {
   position: absolute;
-  height: 90%;
-  width: 90%;
+  height: auto;
+  width: auto;
 }
 
 #marmotGIF {
   position: fixed;
-  top: 600px;
+  top: 625px;
   left: 35px;
+  visibility: hidden;
 }
 
 .text-block {
   color: rgb(28, 195, 240);
   padding-left: 35px;
-  padding-bottom: 25px;
+  padding-bottom: 15px;
+  padding-top: 10px;
   padding-right: 35px;
   position: absolute;
   top: 50%;
@@ -75,13 +85,7 @@ h1 {
   font-size: 65px;
   text-shadow: 15px 15px 15px black;
   margin-bottom: 15px;
-}
-
-h2 {
-  font-family: 'Raleway', sans-serif;
-  font-size: 25px;
-  font-style: italic;
-  text-shadow: 3px 3px 3px black;
+  margin-top: 15px;
 }
 
 h3 {
