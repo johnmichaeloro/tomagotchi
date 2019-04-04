@@ -1,3 +1,6 @@
+//I need to clean up the name-button click function. Break the isDead component into separate functions. But don't move isDead! Doing so will interrupt the flow of the game.
+//I also need to clean up the CSS so that the properties of single elements are not determined by multiple selectors. That's why it bugs out a little when it loads.
+
 class Tomagotchi {
   constructor(name) {
     this.name = name;
@@ -206,6 +209,3 @@ $('#sleep-button').on('click', (e) => {
   }
   $('#sleepiness-metric').text('Sleepiness: ' + tomagotchiFactory.tomagotchis[0].sleepiness);
 })
-
-//To stop the bugs, I need to stop input from the name button during play. I also need to prevent input from the action buttons before and after play. Then I need to check the gray Marmot dimensions to make sure it matches live marmot.
-//I could hide the input form and button during play. I could hide the action buttons before and after play.
